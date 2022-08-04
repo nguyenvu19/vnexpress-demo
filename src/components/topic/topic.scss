@@ -1,0 +1,38 @@
+.topic {
+    margin-top: 20px;
+    .topicContainer {
+        width: 100%;
+        max-width: 1130px;
+        padding: 0 15px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .boxTopic {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        height: 50px;
+        padding-top: 12px;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+    }
+    .titleTopic {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: #757575;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .topicList {
+        display: flex;
+        gap: 15px;
+        .topicItem {
+            color: #9f224e;
+            text-decoration: underline;
+            font-size: 14px;
+            line-height: 160%;
+        }
+    }
+}

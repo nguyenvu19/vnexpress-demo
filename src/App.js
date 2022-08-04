@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./components/header";
+import Navbar from "./components/navbar";
+import TopStory from "./components/top-story";
+import News from "./components/news";
+import Topic from "./components/topic";
+import Tour from "./components/tour";
+import Car from "./components/car";
+import Footer from "./components/footer/Footer";
+import { useState, useEffect } from "react";
+import Totop from "./components/totop";
 function App() {
+  const [scroll, setScroll] = useState(0);
+  useEffect(() => {
+    const handleScroll = (event) => {
+      setScroll(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Totop scroll={scroll} />
+      <Header />
+      <Navbar scroll={scroll} />
+      <main>
+        <TopStory />
+        <News />
+        <Topic />
+        <Tour />
+        <Car />
+      </main>
+      <Footer />
     </div>
   );
 }
